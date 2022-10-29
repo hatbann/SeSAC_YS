@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #background{
+            position: relative;
+            left: 250px;
+            top: 200px;
+        }
+
+        #background img{
+            display: inline;
+            width: 500px;
+            position: absolute;
+            z-index: 10;
+            top:60px;
+        }
+
+        #caterpillar{
+            position: relative;
+            left: 50px;
+        }
+
+
+        #circle1{
+            background-color: rgb(255, 159, 175);
+            position: absolute;
+            top: 0;
+        }
+        #circle2{
+            background-color: rgb(255, 131, 152);
+            position: absolute;
+            z-index: 2;
+            left: 70px;
+            top: 30px;
+        }
+        #circle3{
+            background-color: rgb(201, 111, 126);
+            position: absolute;
+            z-index: 3;
+            left: 130px;
+            top: 80px;
+        }
+        #circle4{
+            background-color: rgb(255, 207, 215);
+            position: absolute;
+            z-index: 4;
+            left: 180px;
+            top: 80px;
+        }
+        #circle5{
+            background-color: rgb(249, 151, 216);
+            position: absolute;
+            z-index: 11;
+            left: 240px;
+            top: 75px;
+        }
+
+        #eye{
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top: 20px;
+            left: 10px;
+        }
+
+        #eye div{
+            background-color: black;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 5px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="background">
+        <img src="../잔디.png" alt="">
+        <div id="caterpillar">
+            <div id="circle1">
+                <div id="eye">
+                    <div></div>
+                </div>
+            </div>
+            <div id="circle2"></div>
+            <div id="circle3"></div>
+            <div id="circle4"></div>
+            <div id="circle5"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        #circle1{
+            background-color: pink;
+        }
+
+        #circle2{
+            background-color: skyblue;
+            position: relative;
+            left: 100px;
+        }
+        #circle3{
+            background-color: aquamarine;
+            position:absolute;
+            left: 10px;
+        }
+        #circle4{
+            background-color: bisque;
+            position: fixed;
+            left: 50px;
+            bottom: 30px;
+        }
+        #c1{
+            background-color: red;
+            position: absolute;
+        }
+
+        #c2{
+            background-color: orange;
+            position: absolute;
+            left: 50px;
+            z-index: 102;
+        }
+        #c3Container{
+            z-index: 1;
+        }
+        #c3{
+            background-color: yellow;
+            position: absolute;
+            left: 100px;
+            z-index: 100;
+        }
+        #c4{
+            background-color: green;
+            position: absolute;
+            left: 150px;
+            z-index: 99;
+        }
+        #c5{
+            background-color: blue;
+            position: absolute;
+            left: 200px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="circle1"></div>
+    <div id="circle2">
+        <div id="circle3"></div>
+    </div>
+    <div id="circle4"></div>
+    <div id="c1"></div>
+    <div id="c2"></div>
+    <div id="c3Container">
+        <div id="c3"></div>
+    </div>
+    <div id="c4"></div>
+    <div id="c5"></div>
+</body>
+</html>

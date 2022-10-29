@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        *{
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        h1{
+            color: coral;
+        }
+        h2{
+            color: skyblue;
+            text-decoration: underline;
+        }
+        h3{
+            color: yellowgreen; text-shadow: 4px 1px 3px rgb(52, 82, 52);
+        }
+        hr{
+            border: 10px;
+            border-style: dotted;
+             color: rgb(173, 123, 255);
+        }
+        img{
+            cursor: not-allowed;
+            border-radius: 20px;
+            width: 200px;
+            margin-left: 200px;
+        }
+        #circle{
+            background-color: pink;
+            border: 3px solid tomato;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        #div2 .apple{
+            color: green;
+        }
+        #div2 > .apple{
+            color: brown;
+        }
+        .apple + p{
+            background-color: pink;
+        }
+
+        .a ~ span{
+            color: blue;
+        }
+
+        .a + span{
+            color: red;
+        }
+        .selector{
+            background-color: rgb(255, 255, 198);
+            width: 300px;
+            height: 200px;
+        }
+
+        .selector:hover{
+            cursor: pointer;
+            background-color: rgb(255, 106, 186);
+        }
+
+        .selector a{
+            color: black;
+        }
+        .selector p:active{
+            color: white;
+        }
+        .selector input:focus{
+            color: red;
+        }
+        .selector a:visited{
+            color: green;
+        }
+        .selector a:link{
+            color: pink;
+        }
+    
+        .fruits div:nth-child(3){
+            color: green;
+        }
+
+        .fruits span:nth-child(3){
+            color: green;
+        }
+
+        .fruits *:first-child{
+            color: red;
+        }
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <hr>
+        <p>p 1</p>
+        <p>p 2</p>
+        <img src="../동글이.jpg" alt="">
+        <div id="circle"></div>
+        <br>
+    </div>
+    <div>
+        <div id="div2">
+            <p class="apple">1</p>
+            <p class="apple">2</p>
+            <div>
+                <p class="apple">3</p>
+            </div>
+            <p>4</p>
+        </div>
+        <p class="apple">5</p>
+        <p>6</p><br>
+    </div>
+    <div>
+        <span class="a">1</span>
+        <span class="a">2</span>
+        <span class="b">3</span>
+        <span class="a">4</span>
+        <br>
+        <br>
+    </div>
+    <div class="selector">
+        <a href="#">a태그</a>
+        <p>p태그</p>
+        <input type="text">
+    </div>
+    <div class="fruits">
+        <span>딸기</span>
+        <span>수박</span>
+        <span>토마토</span>
+        <div>오렌지</div>
+        <p>망고</p>
+        <p>무화과</p>
+        <h4>사과</h4>
+    </div>
+</body>
+</html>
