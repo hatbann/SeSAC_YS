@@ -1,0 +1,47 @@
+td{
+    text-align: center;
+}
+img{
+    width: 30px;
+    height: 30px;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 15px;
+    width: 216px;
+    text-align: center;
+}
+
+.marvelDay{
+    color: red;
+}
+
+.classNum{
+    color: green;
+}
+
+.marvel{
+    width: 100%;
+    height: 40px;
+}
+
+.cafeMenu tr:first-child{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+.cafeMenu img{
+    width: 150px;
+    height: 100px;
+}
+
+.cafeMenu tr td:nth-child(2){
+    padding: 0 100px;
+}
+
+.cafeMenu a{
+    text-decoration: none;
+    color: black;
+}
