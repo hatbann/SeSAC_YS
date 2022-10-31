@@ -1,45 +1,137 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        div{
-            background-color: rgb(239, 239, 239);
-            width: 700px;
-            height: 300px;
-            position: relative;
-            left: 50px;
-            text-align: center;
-        }
-        img{
-            width: 220px;
-            height: 130px;
-            transform: skewY(15deg);
-            position: relative;
-            top: 80px;
-        }
-        img:first-child{
-            z-index: 3;
-            left: 70px;
-        }
+      div {
+        background-color: rgb(239, 239, 239);
+        width: 700px;
+        height: 300px;
+        position: relative;
+        left: 50px;
+        text-align: center;
+      }
+      img {
+        width: 220px;
+        height: 130px;
+        transform: skewY(15deg);
+        position: relative;
+        top: 80px;
+      }
+      img:first-child {
+        z-index: 3;
+        left: 70px;
+      }
 
-        img:nth-child(2){
-            z-index: 2;
-        }
-        img:last-child{
-            z-index: 1;
-            right: 70px;
-        }
+      img:nth-child(2) {
+        z-index: 2;
+      }
+      img:last-child {
+        z-index: 1;
+        right: 70px;
+      }
+      .heart {
+        left: 0;
+        width: 100vw;
+        height: 500px;
+        background-color: rgb(220, 245, 255);
+      }
+
+      .block {
+        position: absolute;
+        background-color: pink;
+        width: 40px;
+        height: 40px;
+      }
+      .block:first-child {
+        top: 10px;
+      }
+      .block:nth-child(2) {
+        top: 10px;
+        left: 150px;
+      }
+      .block:nth-child(3) {
+        top: 60px;
+      }
+      .block:nth-child(4) {
+        top: 60px;
+        left: 100px;
+      }
+      .block:nth-child(5) {
+        top: 60px;
+        left: 150px;
+      }
+      .block:nth-child(6) {
+        left: 0px;
+        top: 110px;
+      }
+      .block:nth-child(7) {
+        top: 110px;
+      }
+      .block:nth-child(8) {
+        top: 110px;
+        left: 100px;
+      }
+      .block:nth-child(9) {
+        top: 110px;
+        left: 150px;
+      }
+      .block:nth-child(10) {
+        top: 110px;
+        left: 200px;
+      }
+      .block:nth-child(11) {
+        top: 160px;
+      }
+      .block:nth-child(12) {
+        top: 160px;
+        left: 100px;
+      }
+      .block:nth-child(13) {
+        top: 160px;
+        left: 150px;
+      }
+      .block:last-child {
+        top: 210px;
+        left: 100px;
+      }
     </style>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-x07t753igtlmNC_a7J1UXiuB0qToV386hrTKDOEqd5-ambPiRlujutrHZuXAnC1W6Wo&usqp=CAU" alt="">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5varEeFcuCCD4l_decJFqzhqhgIXUjQUKQgH9T576m7PmOb-8pjB5g_nb9cqmWxp8BQ&usqp=CAUg" alt="">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnMinlfV154k2xxsS1a2cqVoO9ofSxAv_OA&usqp=CAU" alt="">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-x07t753igtlmNC_a7J1UXiuB0qToV386hrTKDOEqd5-ambPiRlujutrHZuXAnC1W6Wo&usqp=CAU"
+        alt=""
+      />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs5varEeFcuCCD4l_decJFqzhqhgIXUjQUKQgH9T576m7PmOb-8pjB5g_nb9cqmWxp8BQ&usqp=CAUg"
+        alt=""
+      />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnMinlfV154k2xxsS1a2cqVoO9ofSxAv_OA&usqp=CAU"
+        alt=""
+      />
     </div>
-</body>
+    <br />
+    <br />
+    <div class="heart">
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+      <div class="block"></div>
+    </div>
+  </body>
 </html>
