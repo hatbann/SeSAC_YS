@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            animation: backgroundAnime;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+        }
+        img{
+            position: relative;
+        }
+
+        .city{
+            text-align: center;
+        }
+        .city_img{
+            width: 600px;
+            top: 200px;
+            opacity: 100;
+        }
+        .sun{
+            left: 630px;
+            top: 500px;
+            width: 120px;
+            transform-origin: 400px;
+            animation: animeSun;
+            animation-duration: 15s;
+            animation-iteration-count:infinite;
+            animation-timing-function: linear;
+        }
+        .moon{
+            left: 500px;
+            top: 500px;
+            width: 120px;
+            transform-origin: 400px;
+            animation: animeMoon;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .cloud_1{
+            width: 120px;
+            top: 150px;
+            animation-name: animeCloud1;
+            animation-duration: 16s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+        .cloud_2{
+            top: 200px;
+            width: 70px;
+            animation-duration: 13s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: animeCloud2;
+        }
+
+        @keyframes backgroundAnime {
+            0%{
+                background-color: rgb(179, 220, 255);
+            }
+            25%{
+                background-color: rgb(255, 219, 225);
+            }
+            50%{
+                background-color: rgb(45, 45, 77);
+            }
+            75%{
+                background-color: rgb(50, 50, 87);
+            }
+            100%{
+                background-color: rgb(179, 220, 255);
+            }
+        }
+        @keyframes animeSun {
+            0%{
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+            25%{
+                transform: rotate(90deg);
+                opacity: 100;
+            }
+            50%{
+                transform: rotate(180deg);
+                opacity: 0;
+            }
+            75%{
+                transform: rotate(270deg);
+                opacity: 0;
+            }
+            100%{
+                transform: rotate(360deg);
+                opacity: 0;
+            }
+
+        }
+        @keyframes animeMoon {
+            0%{
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+            25%{
+                transform: rotate(-90deg);
+                opacity: 0;
+            }
+            50%{
+                transform: rotate(-180deg);
+                opacity: 0;
+            }
+            75%{
+                transform: rotate(-270deg);
+                opacity: 100;
+            }
+            100%{
+                transform: rotate(-360deg);
+                opacity: 0;
+            }
+        }
+        @keyframes animeCloud1 {
+            0%{
+                left: 0;
+                opacity: 0;
+            }
+            25%{
+                left: 700px;
+                opacity: 100%;
+            }
+            50%{
+                left: 1400px;
+                opacity: 0;
+            }
+            75%{
+                left: 700px;
+                opacity: 100%;
+            }
+            100%{
+                left: 0;
+                opacity: 0;
+            }
+
+        }
+        @keyframes animeCloud2 {
+            0%{
+                left: 0;
+                opacity: 0;
+            }
+            25%{
+                left: 700px;
+                opacity: 100%;
+            }
+            50%{
+                left: 1400px;
+                opacity: 0;
+            }
+            75%{
+                left: 700px;
+                opacity: 100%;
+            }
+            100%{
+                left: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <article class="sky">
+            <img src="./img/sun.png" alt="태양" class="sun">
+            <img src="./img/moon.png" alt="달" class="moon">
+            <img src="./img/cloud.png" alt="큰 구름" class="cloud_1">
+            <img src="./img/cloud.png" alt="작은 구름" class="cloud_2">
+        </article>
+
+        <article class="city">
+            <img src="./img/city.png" alt="" class="city_img">
+        </article>
+    </section>
+</body>
+
+</html>
