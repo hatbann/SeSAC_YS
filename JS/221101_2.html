@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 0;
+        var a = 1; //가능
+        let b = 1;
+        // let b = 2; 재선언 불가능
+        // const c; 불가능
+        const c = 1;
+        /*
+        console.log(typeof('문자'));
+        console.log(typeof(245));
+        console.log(typeof(function(){}));
+        console.log(typeof(true));
+        console.log(typeof({}));
+        console.log(typeof([]));
+        console.log(typeof(NaN));
+        console.log(typeof(null));
+        */
+
+        console.log(a+b); // 2
+        a = '1';
+        console.log(a+b); //11
+        console.log(parseInt(a) + b); //2
+
+        function sesac(){
+            console.log('sesac');
+        }
+
+        function sesac2(a,b){
+            console.log(a+b);
+        }
+
+        sesac();
+        sesac2("hello ", "sesac!");
+
+        function init(){
+            console.log('init');
+        }
+        function param1(a){
+            console.log(a);
+        }
+        function param2(a,b){
+            console.log(a+ " " + b);
+        }
+        function param3(a,b,c){
+            console.log("a: " + a);
+            console.log("b: " + b);
+            console.log("c: " + c);
+        }
+
+        init();
+        param1();
+        param1(10);
+        param2(5,3);
+        param3(1,2,3);
+        let variable = "hello";
+        param1(variable);
+    </script>
+</body>
+</html>
