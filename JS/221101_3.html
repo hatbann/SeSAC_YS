@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt("숫자를 입력하세요");
+
+        if(a>10){
+            console.log("a > 10");
+            if(a>8){
+                console.log("a>15");
+            }
+        }
+        else if(a > 5){
+            console.log("a > 5");
+        }
+        else if(a>0){
+            console.log("a > 0");
+        }
+        else{
+            console.log("no!");
+        }
+   
+       
+        switch(Number(a)){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+                console.log("홀수");
+                break;
+            case 2:
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+                console.log("짝수");
+                break;
+            default:
+                console.log("?");
+                break;
+            }
+
+            for(let i =  0; i<10; i++){
+                console.log(i);
+            }
+            let j = 0;
+            while(j<10){
+                console.log(j);
+                j = j+1;
+            }
+   </script>
+</body>
+</html>

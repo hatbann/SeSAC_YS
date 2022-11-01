@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        for(let i = 1; i<10; i++){
+            for(let j = 1; j<10; j++){
+                console.log(`${i} * ${j} = ${i*j}`);
+            }
+        }
+        */
+
+        
+        let n = 10;
+        let sum = 0;
+        for(let i = 1; i<=n; i++){
+            if(i % 2 === 0 || i%3 ===0){
+                sum += i;
+            }
+        }
+        console.log(sum);
+
+    </script>
+</body>
+</html>
