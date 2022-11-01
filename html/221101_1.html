@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .d-inline1{
+            display: inline;
+            background-color: red;
+        }
+        .d-inline2{
+            background-color: yellow;
+            width: 50%;
+            height: 200px;
+        }
+        .d-inline3{
+            display: inline-block;
+            background-color: skyblue;
+            width: 200px;
+            height: 200px;
+        }
+        .d-flex{
+            display: flex;
+            height: 100px;
+            background-color: chartreuse;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .anime{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            position: relative;
+            animation-name: ani;
+            animation-duration: 3s;  /*지속시간*/
+            animation-delay: 1s; /*처음 시작전 몇초 후에 할지*/
+            animation-iteration-count: 3; /*반복횟수*/
+            animation-timing-function: ease-out;
+        }
+
+        .anime2{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: slateblue;
+            position: relative;
+            animation: ani2;
+            animation-duration: 3s;
+            animation-iteration-count: 2;
+            animation-timing-function: ease;
+        }
+        @keyframes ani {
+            /*
+            from{
+                left: 0;
+            }   
+            to{
+                left: 50vw;
+            }*/
+            0%{
+                left: 0;
+            }
+            50%{
+                left: 50vw;
+            }
+            100%{
+                left: 0;
+            }
+        }
+
+        @keyframes ani2 {
+            0%{
+                bottom: 0px;
+            }
+            25%{
+                bottom: -100px;
+            }
+            50%{
+                bottom: 0px;
+            }
+            75%{
+                bottom: -100px;
+            }
+            100%{
+                bottom: 0px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="d-inline1">
+        d-inline1
+    </div>
+    <div class="d-inline2">
+        d-Block
+    </div>
+    <div class="d-inline3">
+        d-inlineBlock
+    </div>
+    <div class="d-flex">
+        <div style="background-color: pink;">
+            <div>1</div>
+            <div>2</div>
+        </div>
+        <div style="background-color:bisque; width: 100px;">
+            <div>3</div>
+        </div>
+        <div>4</div>
+    </div>
+
+    <div class="anime">
+    </div>
+    <div class="anime2"></div>
+</body>
+</html>
