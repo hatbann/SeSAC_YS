@@ -15,6 +15,18 @@
     </ul>
     <button type="button" onclick="add();">추가</button>
     <button type="button" onclick="deleteLi();">삭제</button>
+
+
+    <div class="greets">
+        <div class="greet">
+            Hello
+        </div>
+        <div class="greet">
+            Hi
+        </div>
+    </div>
+
+    <button type="button" onclick="addGreet();">greet 추가</button>
     <script>
         var tag = document.querySelector('img');
         var ul = document.querySelector('ul');
@@ -48,6 +60,25 @@
             */
 
         }
+
+        const greetnode = document.querySelectorAll('.greet');
+        const greetHtml = document.getElementsByClassName('greet');
+        //const greets = document.getElementsByClassName('greets'); //htmlcollection
+        const greets = document.querySelector('.greets'); //nodelist
+
+        console.log(greets);
+        console.log(greetnode.length);
+        console.log(greetHtml.length);
+
+        function addGreet(){
+            let newgreet = document.createElement('div');
+            newgreet.innerText = '안녕하세요';
+            greets.append(newgreet);
+            
+        console.log(greetnode.length);
+        console.log(greetHtml.length);
+        }
+
     </script>
 </body>
 </html>

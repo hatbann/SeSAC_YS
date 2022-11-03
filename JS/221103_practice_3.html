@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .menuBox{
+            width: 350px;
+            height: 100px;
+          position: relative;
+          margin-bottom: 40px;
+    
+        }
+
+        .content span{
+            display: inline-block;
+            background-color: white;
+            margin-left: 10px;
+        }
+
+        .content{
+            margin-left: 20px;
+            z-index: 2;
+        }
+
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>피자 주문</h1>
+
+    <fieldset>
+        <legend>사이즈</legend>
+            <p>Large - 24000 원</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>추가주문</legend>
+        <p>
+            <input type="checkbox" name="" id="pickle"  onchange="addPrice(this);" value="800">
+            <label for="pickle">피클(800원)</label>
+            <input type="checkbox" name="" id="chili"   onchange="addPrice(this);" value="300">
+            <label for="chili">칠리 소스(300원)</label>
+            <input type="checkbox" name="" id="dipping"   onchange="addPrice(this);" value="200">
+            <label for="dipping">디핑 소스(200원)</label>
+            <input type="checkbox" name="" id="stick"   onchange="addPrice(this);" value="4800">
+            <label for="stick">치즈 스틱(4개, 4800원)</label>
+            <input type="checkbox" name="" id="salad"  onchange="addPrice(this);" value="2400">
+            <label for="salad">콘 샐러드(2400원)</label>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>합계</legend>
+        <p id="sum">
+            0
+        </p>
+    </fieldset>
+
+
+    <script>
+        let sum = document.querySelector('#sum');
+        let pickle = document.querySelector('#pickle');
+        let chili = document.querySelector('#chili');
+        let dipping = document.querySelector('#dipping');
+        let stick = document.querySelector('#stick');
+        let salad = document.querySelector('#salad');
+
+        let sumprice = Number(sum.innerText);
+        
+        function addPrice(param) {
+            if(param.checked){
+                
+                sumprice += Number(param.value);
+            }else{
+                sumprice -= Number(param.value);
+            }
+            if(!pickle.checked && !chili.checked && !dipping.checked && !stick.checked && !salad.checked){
+                sum.innerText = 0;
+            }else{
+                sum.innerText = sumprice + 24000;
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+<!--
+    if(name === 'pickle'){
+    if(pickle.checked){
+        sumprice+= 800;
+    }
+    else{
+        sumprice -= 800;
+    }
+}
+else if(name === 'chili'){
+    if(chili.checked){
+        sumprice+= 300;
+    }
+    else{
+        sumprice -= 300;
+    }
+}
+else if(name === 'dipping'){
+    if(dipping.checked){
+        sumprice+= 200;
+    }
+    else{
+        sumprice -= 200;
+    }
+}
+else if(name === 'stick'){
+    if(stick.checked){
+        sumprice+= 4800;
+    }
+    else{
+        sumprice -= 4800;
+    }
+}
+else if(name === 'salad'){
+    if(salad.checked){
+        sumprice+= 2400;
+    }
+    else{
+        sumprice -= 2400;
+    }
+}
+
+-->
