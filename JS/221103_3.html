@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../동글이.jpg" width="100" height="100" alt="">
+    <button type="button" onclick="imageChange();">이미지</button>
+
+    <ul>
+        <li>이름</li>
+    </ul>
+    <button type="button" onclick="add();">추가</button>
+    <button type="button" onclick="deleteLi();">삭제</button>
+    <script>
+        var tag = document.querySelector('img');
+        var ul = document.querySelector('ul');
+        function imageChange(){
+            tag.src = '../바다.png';
+            tag.width = "200";
+            tag.height = "200";
+        }
+
+
+        function add(){
+            var newli = document.createElement('li');
+            var newli2 = document.createElement('li');
+            newli.innerText = "새로운 li";
+            newli2.innerText = "새로운 li2";
+            ul.append(newli, newli2); //한번 추가할 때 여러개 넣을 수 있음
+            // ul.appendChild(newli);  한개의 자식만
+        }
+
+        function deleteLi(){
+            var li = document.querySelector('li');
+            li.remove(); //가장 위에있는게 삭제된다
+
+            /*
+            부모요소.removeChild(자식요소)
+            로 둘다 알아야한다
+
+            혹은
+            li.parentElement.removeChilde('li');
+            이런식
+            */
+
+        }
+    </script>
+</body>
+</html>

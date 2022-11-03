@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="val1">값1:</label>
+            <input id="val1"type="text">
+        </div>
+        <div>
+            <label for="val2">값2:</label>
+            <input id="val2"type="text">
+        </div>
+        <div>
+            <label for="op">연산자:</label>
+            <input id="op"type="text">
+        </div>
+        <div>
+            <label for="result">결과:</label>
+            <input id="result"type="text">
+        </div>
+        <button id="cal" type="button" onclick="calculate();">계산하기</button>
+        <button id="reset" type="button" onclick="reset2()">초기화</button> 
+    </form>
+    <script>
+        let val1 = document.getElementById('val1');
+        let val2 = document.getElementById('val2');
+        let op = document.getElementById('op');
+        let result = document.getElementById('result');
+        
+        function calculate() {
+            let operator = op.value;
+            let num1 = Number(val1.value);
+            let num2 = Number(val2.value);
+            if(operator === "+"){
+                result.value = num1 + num2;
+            }
+            else if(operator ==="-"){
+                result.value = num1 - num2;
+            }
+            else if(operator === "*"){
+                result.value = num1 * num2;
+            }
+            else if(operator === "/"){
+                result.value = num1 / num2;
+            }
+        }
+
+
+        function reset2() {
+            val1.value = '';
+            val2.value = '';
+            op.value = '';
+            result.value = '';
+        }
+    </script>
+</body>
+</html>

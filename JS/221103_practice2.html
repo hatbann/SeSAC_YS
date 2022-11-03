@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,td,tr{
+            border-collapse: collapse;
+        }
+
+        td{
+            padding: 7px 10px;
+        }
+
+        button{
+            margin: 30px 0;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <p>방명록입니다.</p>
+    <form action="">
+        <div>
+            <label for="writer"><strong>작성자</strong></label>
+            <input type="text" name="" id="writer">
+        </div>
+        <div>
+            <label for="content"><strong>내용</strong></label>
+            <input type="text" name="" id="content" style="width:500px">
+        </div>
+        <button type="button" onclick="writeTable();">작성</button>
+        <table border="1" id="table">
+            <tr>
+                <td>번호</td>
+                <td>작성자</td>
+                <td>내용</td>
+                <td>작성일</td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let writer = document.getElementById('writer');
+        let content = document.getElementById('content');
+        let table = document.getElementById('table');
+
+        let num = 1;
+        function writeTable(){
+            let newTr = document.createElement('tr');
+            let numTd = document.createElement('td');
+            let writerTd = document.createElement('td');
+            let contentTd = document.createElement('td');
+            let dateTd = document.createElement('td');
+
+            let time = new Date()
+            numTd.innerText = num++;
+            writerTd.innerText = writer.value;
+            contentTd.innerText = content.value;
+            dateTd.innerText =  `${time.getFullYear()}-${time.getMonth()}-${time.getDate()} ${time.getHours()} : ${time.getMinutes()}`;
+
+            newTr.append(numTd, writerTd, contentTd, dateTd);
+            table.append(newTr);
+            writer.value = '';
+            content.value = '';
+        }
+    </script>
+</body>
+</html>
