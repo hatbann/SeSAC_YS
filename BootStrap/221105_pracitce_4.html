@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .orange{
+            background-color: orange;
+        }
+
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .purple{
+            background-color: purple;
+        }
+
+    </style>
+    <script>
+
+        function changeColor(){
+            /*
+            $('div').switchClass("red", "orange", 1500);
+            $('div').switchClass("orange", "yellow", 1500);
+            $('div').switchClass("yellow", "green", 1500);
+            $('div').switchClass("green", "blue", 1500);
+            $('div').switchClass("blue", "purple", 1500);
+            */
+
+            if($('div').hasClass('red')){
+                $('div').switchClass("red", "orange", 500);
+            }
+            else if($('div').hasClass('orange')){
+                $('div').switchClass("orange", "yellow", 500);
+            }
+            else if($('div').hasClass('yellow')){
+                $('div').switchClass("yellow", "green", 500);
+            }
+            else if($('div').hasClass('green')){
+                $('div').switchClass("green", "blue", 500);
+            }
+            else if($('div').hasClass('blue')){
+                $('div').switchClass("blue", "purple", 500);
+            }
+            else if($('div').hasClass('purple')){
+                $('div').switchClass("purple", "red", 500);
+            }
+        }
+
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+        <div class="red" onclick="changeColor();">
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
+    <style>
+        #practice1{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container{
+            width: 500px;
+            height: 500px;
+            border: 6px solid orange;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        img{
+            height: 400px;
+            width: auto;
+            max-width: 400px;
+        }
+
+        button{
+            border: none;
+            background-color: rgb(91, 250, 83);
+            padding: 7px 10px;
+            border-radius: 10px;
+            color: white;
+        }
+
+    </style>
+    <script>
+        function apple(){
+            $('#image').attr('src' , "http://img1.tmon.kr/cdn3/deals/2020/09/20/3252248318/front_d7334_cug82.jpg"); 
+            $('#selectFruit').remove();
+        }
+        function banana(){
+            $('#image').attr('src' , "http://kormedi.com/wp-content/uploads/2021/09/gettyimages-1189095854-580x443.jpg");
+            $('#selectFruit').remove();
+        }
+
+        function grape(){
+           $('#image').attr('src' , " https://health.chosun.com/site/data/img_dir/2022/09/06/2022090602057_0.jpg");
+           $('#selectFruit').remove();
+        }
+
+        function peach(){
+            $('#image').attr('src' , "https://health.chosun.com/site/data/img_dir/2022/07/29/2022072902003_0.jpg");
+            $('#selectFruit').remove();
+        }
+
+        function changeColor(){
+            $('').switchClass("sizeup", "third", 1500);
+        }
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="practice1">
+        <div class="container">
+            <p id="selectFruit">과일을 골라볼게요</p>
+            <img src="" alt="" id="image">
+        </div>
+        <div>
+            <button type="button" onclick="apple()">사과</button>
+            <button type="button" onclick="banana()">바나나</button>
+            <button type="button" onclick="grape()">포도</button>
+            <button type="button" onclick="peach()">복숭아</button>
+        </div>
+
+    </div>
+</body>
+</html>

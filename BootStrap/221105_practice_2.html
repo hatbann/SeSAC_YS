@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">홈</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">정보</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Skill
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">HTML</a></li>
+                  <li><a class="dropdown-item" href="#">CSS</a></li>
+                  <li><a class="dropdown-item" href="#">JS</a></li>
+                  <li><a class="dropdown-item" href="#">REACT</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Project</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-column align-items-center ">
+        <div class="row d-flex justify-content-center" style="margin-top: 50px;">
+            <div class="col-2">
+              <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+              </div>
+            </div>
+            <div class="col-4" >
+              <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0" style="overflow: auto; height:300px;">
+                <h4 id="list-item-1">아메리카노</h4>
+                <p>에스프레소에 뜨거운 물을 희석시켜 만든 음료.
+                    아메리카노라고 줄여서 불리지만 정확한 명칭은 Caffé Americano이다. 이탈리아어인 'Caffè Americano'를 영역(英譯)하면 'American coffee'이지만 영어로 쓰이는 경우는 없다.
+                    단어를 해석하자면 '미국식 커피'로, 말 그대로 '유럽식 커피에 비해 옅은 농도인 미국식 커피 스타일'을 일컫는 말이다. 다만 후술되어있듯 미국에서 가장 대중적인 커피 스타일은 카페라테이다.</p>
+                <h4 id="list-item-2">바닐라라떼</h4>
+                <p>에스프레소를 이용한 카페라테에 바닐라 시럽를 넣은 커피의 일종.
+
+                    에스프레소에 우유와 바닐라 시럽을 넣은 커피로 에스프레소의 쓴맛과 바닐라시럽의 향미가 느껴지는 커피이다.
+                    바닐라는 흔히 아이스크림, 과자, 케이크 등에 들어가는 향신료 중 하나로 경우에 따라 커피에도 들어가는데, 이렇게 라테에 바닐라 시럽을 넣은 바리에이션 커피가 바닐라 라테이다.
+                    
+                    카페모카나 캐러멜 마키아토에서 각각 초코 시럽 혹은 캐러맬 시럽을 빼고 바닐라 원료를 섞은 것이나 다름없다.</p>
+                <h4 id="list-item-3">카페라떼</h4>
+                <p>Caffe latte. 우유를 넣은 커피의 일종이다. 이탈리아어로 카페는 커피를, 라테는 우유를 뜻한다. ‘카페 라테’는 이탈리아어로 ‘우유 커피’를 뜻한다. 프랑스어나 스페인어에서는 그대로 우유를 곁들인 커피라는 문어로 카페 라테를 옮겨 적는다.[1] 시중에서도 흔히 접할 수 있는 종류 중 하나이다. 대개 라테라는 것은 에스프레소 위에 우유를 넣는 것으로서 우유가 5mm 정도 맨 위에 층을 이루고 있는 것이 특징이다.</p>
+                <h4 id="list-item-4">카페모카</h4>
+                <p>베리에이션 커피의 일종. 에스프레소에 우유와 초콜릿 시럽/소스를 넣어서 만든다. 초콜릿 시럽/소스를 넣는다는 점이 포인트이고, 휘핑크림은 기호에 따라 올리기도 하고 안 올리기도 한다. 이탈리아나 스페인 등지에서 처음 만들어졌으며 미국으로 건너가 대중화가 되었다.</p>
+                <h4 id="list-item-4">핫초코</h4>
+                <p>초콜릿을 기반으로 한 음료. 영어로 Cocoa, Hot Chocolate이라고한다.
+
+다만 마케팅 상 코코아보다는 핫초코라고 이름붙은 쪽이 더 걸쭉하고 진하게 만든다. 원 재료가 더 들어가는 점도 있지만 기본적으로는 인스턴트 음료 식품에서의 커피와 카푸치노의 차이처럼 점증제나 포말제가 더 들어가서 그런 것일 뿐, 기본적으론 같은 물건이다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around" style="width: 90vw;">
+            <div class="card col-4" style="width: 18rem; margin-top: 50px; ">
+                <img src="https://i.pinimg.com/564x/40/1f/84/401f8405d5f46ddbbbe971e5f42687cc.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">쿠키</h5>
+                  <p class="card-text" style="height: 150px;">비스킷의 일종으로, 설탕을 넣고 크림화한 버터에 밀가루와 화학적 팽창제를 넣고, 여러가지 기호식품을 첨가해 만든 과자. 단순히 밀가루와 팽창제만으로 만든 건 크래커라고 부른다.</p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+              <div class="card  col-4" style="width: 18rem; margin-top: 50px;">
+                <img src="https://i.pinimg.com/564x/9e/f6/1d/9ef61dfb12b5a85f5c718f40e8994e07.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">도넛</h5>
+                  <p class="card-text" style="height: 150px;">밀가루에 여러 가지 부재료를 섞어 반죽하여 굽거나 기름에 튀긴 과자. 어원은 밀가루 반죽(dough)+견과류(Nuts).</p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+              <div class="card  col-4" style="width: 18rem; margin-top: 50px;">
+                <img src="https://i.pinimg.com/564x/80/58/a8/8058a805578d6ba396e557c0d43c9105.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">치즈케이크</h5>
+                  <p class="card-text" style="height: 150px;">치즈를 주 재료로 만들어진 커스터드 파이의 한 종류. 후식 파이 중 가장 오래된 역사를 자랑한다. 기원전 8세기경 그리스를 비롯한 근동에서 만들어진 요리다.</p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+          </div>
+          <div class="row d-flex justify-content-around" style="width: 90vw;">
+            <div class="card col-4" style="width: 18rem; margin-top: 50px; ">
+                <img src="https://i.pinimg.com/564x/30/f4/d6/30f4d64e78c40c981084ebb430e94f4c.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">마들렌</h5>
+                  <p class="card-text" style="height: 150px;">프랑스가 원산지인 과자로, 카스텔라와 비슷한 맛이 난다. 기본적으로는 조개 모양의 틀로 구워서 사진과 같이 조개 모양으로 굽지만, 사용한 모양틀에 따라 다양한 형태가 존재한다. </p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+              <div class="card  col-4" style="width: 18rem; margin-top: 50px;">
+                <img src="https://i.pinimg.com/736x/3a/28/d5/3a28d56a0d1f10bd2b97ef1153e82466.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">마카롱</h5>
+                  <p class="card-text" style="height: 150px;">이탈리아에서 기원한 쿠키 중 하나. (프랑스에서 기원한 쿠키로 오해하는 사람이 많다.) 널리 알려진 것은 머랭으로 만든 쿠키 2개 사이에 크림이 포개진 것이다.</p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+              <div class="card  col-4" style="width: 18rem; margin-top: 50px;">
+                <img src="https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/P7F/image/h1zRGhQjNkGWwNudkFAbRzZda-c" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">젤라또
+
+                  </h5>
+                  <p class="card-text" style="height: 150px;">이탈리아어로 아이스크림이라는 뜻이나, 한국어에서는 일반적으로 이태리풍 아이스 밀크를 의미한다. 흔히 '젤라또'라는 발음으로 알려져 있으며, 복수형은 gelati.</p>
+                  <a href="#" class="btn btn-outline-info">주문</a>
+                </div>
+              </div>
+          </div>
+          <div style="margin-top: 70px;">
+            <h1>문의사항</h1>
+              
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="이메일" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              </div>
+              
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="성함" aria-label="Username">
+              </div>
+              
+              <div class="input-group">
+                <span class="input-group-text">내용</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+              <button type="button" class="btn btn-primary" style="margin-top: 20px; position:absolute;">Primary</button>
+          </div>
+    </div>
+
+    
+
+    <nav aria-label="Page navigation example" class="d-flex justify-content-center" style="margin-top: 100px;">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

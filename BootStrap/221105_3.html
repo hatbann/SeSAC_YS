@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        function getData(){
+            /*
+            var val1 = document.getElementById('input1');
+            console.log(val1);
+            */
+
+            let var1 = $('#input1').val();
+            console.log(var1);
+        }
+
+        function setData(){
+            // document.getElementById('input1').value = "hi";
+            $('#input1').val("hi");
+        }
+
+        function setStyle1(){
+            let p = document.getElementById('p1');
+            p.style = "background-color: tomato; color: white";
+        }
+
+        function setStyle2(){
+            $('#p1').css("background-color", "pink");
+        }
+
+        function setStyle3(){
+            $('#p1').attr("style", "background-color:yellow; color:black");
+        }
+        
+        function changeText(){
+            console.log($('#p1').text());
+            $('#p1').text("글자변경");
+        }
+        function changeHTML(){
+            $('#p1').html("<strong>굵은글자변경</strong>")
+        }
+        function append1(){
+            $("#p1").append("<h3>h3태그입니다</h3>");
+        }
+        
+
+        function append(){
+            $('ul').append("<li>append</li>")
+        }
+
+        function prepend(){
+            $('ul').prepend("<li>prepend</li>")
+        }
+
+        function before(){
+            $('#li1').before("<li>prepend</li>")
+        }
+
+        function after(){
+            $('#li1').after("<li>prepend</li>")
+        }
+
+        function remove(){
+            $('#li1').remove();
+        }
+
+        function empty(){
+            $('ul').empty();
+        }
+
+        function parent1(){
+            console.log($('#li1').parent());
+            console.log($('#li1').parent().parent());
+            $('#li1').parent().append("<p>parent P</p>"); //요소탐색 : parents, next, prev, children 등
+        }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="parent1()">parent</button>
+    <ul>
+        <li id="li1">기존 li</li>
+    </ul>
+
+    <button onclick="append()">append</button>
+    <button onclick="prepend()">prepend</button>
+    <button onclick="before()">before</button>
+    <button onclick="after()">after</button>
+    <button onclick="remove()">remove</button>
+    <button onclick="empty()">empty</button>
+    <div class="container">
+        <p id="p1">p태그입니다</p>
+        <button type="button" onclick="setStyle1()">js로 바꾸기</button>
+        <button type="button" onclick="setStyle2()">jquery로 바꾸기</button>
+        <button type="button" onclick="setStyle3()">jquery로 한번에 바꾸기</button>
+        <button type="button" onclick="changeText()">Text 바꾸기</button>
+        <button type="button" onclick="changeHTML()">HTML  바꾸기</button>
+        <button type="button" onclick="append1()">요소추가</button>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <input type="text" id="input1">
+    <button type="button" onclick="getData()">값 가져오기</button>
+    <button type="button" onclick="setData()">값 넣기</button>
+    <br>
+    <hr>
+    <br>
+
+</body>
+</html>
