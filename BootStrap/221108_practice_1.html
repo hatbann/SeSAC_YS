@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
+    <style>
+        td:hover{
+            cursor: pointer;
+        }
+        td{
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content{
+            font-size: 10px;
+        }
+
+        #title{
+            font-size: 20px;
+            font-weight: 600;
+            color: tomato;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="date">날짜</label>
+            <input type="text" name="" id="date">
+        </div>
+        <div>
+            <label for="content">내용</label>
+            <input type="text" name="" id="content">
+        </div>
+        <button type="button" onclick="onWrite()">작성</button>
+    </form>
+    <table>
+        <tr>
+            <td  colspan="7" id="title">2022년 7월</td>
+            </tr>
+        <tr>
+            <td style="color: red;">일</td>
+            <td>월</td>
+            <td>화</td>
+            <td>수</td>
+            <td>목</td>
+            <td>금</td>
+            <td style="color:blue">토</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td >1</td>
+            <td style="color:blue">2</td>
+        </tr>
+        <tr>
+            <td style="color: red;">3</td>
+            <td>4</td>
+            <td>5</td>
+            <td >6</td>
+            <td>7</td>
+            <td >8</td>
+            <td style="color:blue">9</td>
+        </tr>
+        <tr>
+            <td style="color: red;">10</td>
+            <td>11</td>
+            <td>12</td>
+            <td >13</td>
+            <td>14</td>
+            <td>15</td>
+            <td style="color:blue">16</td>
+        </tr>
+        <tr>
+            <td style="color: red;">17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td style="color:blue">23</td>
+        </tr>
+        <tr>
+            <td style="color: red;">24</td>
+            <td>25</td>
+            <td>26</td>
+            <td >27</td>
+            <td>28</td>
+            <td>29</td>
+            <td style="color:blue">30</td>
+        </tr>
+        <tr>
+            <td style="color: red;">31</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+        let targetTd;
+        $('td').click(function (e) {
+            $('#date').val(e.currentTarget.innerText);
+            targetTd = e.currentTarget;
+        })
+
+        function onWrite(){
+            let newContent = document.createElement("div");
+            newContent.className = "content";
+            let content = document.createTextNode($('#content').val());
+            newContent.appendChild(content);
+            console.log(newContent);
+            targetTd.appendChild(newContent);
+            console.log(targetTd);
+            
+        }
+    </script>
+</body>
+</html>

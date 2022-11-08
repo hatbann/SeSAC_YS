@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
+    <style>
+        #div1{
+            width: 100px; 
+            height:100px; 
+            background-color:yellow
+        }
+
+        #div1:hover{
+            cursor: pointer;
+        }
+    </style>
+    <title>Jquery</title>
+</head>
+<body>
+    body 태그
+    <div id="div1"></div>
+
+    <input type="text" name="" id="input1">
+    <div id="alert1"></div>
+    <div id="alert2"></div>
+    <script>
+        //로딩 이벤트
+        /*$(document).ready(function(){
+            alert("document.ready");
+        }) //같음
+        */
+       /*
+        $(function(){
+            alert("body");
+        }) //같음
+
+        */
+
+        //마우스 이벤트
+        /*
+        $('#div1').click(function (e) {
+            console.log("div click");
+            console.log("e : ", e);
+        })
+        */
+
+        /*
+        $('#div1').mouseover(function (e) {
+            console.log("div mouseover");
+            console.log("e : ", e);
+        })
+
+        $('#div1').mouseleave(function (e) {
+            console.log("div mouseleave");
+            console.log("e : ", e);
+        })
+        */
+
+        /*
+        $('#div1').hover(function (e) {
+            console.log("div hover over");
+            console.log("e : ", e);
+        }, function (e) {
+            console.log("div hover leave");
+            console.log("e : ", e);
+        })
+
+        $(window).scroll(function (e) {
+            console.log("window scroll");
+            console.log(e);
+        })
+        */
+
+        
+        //키보드 이벤트
+        $('#input1').keydown(function (e) {
+            console.log("input keydown");
+            console.log(e.keyCode - 48);
+            console.log(e.key);
+            console.log(e.currentTarget.value); //한단계씩 느림
+            $('#alert1').text(`keydown:  ${e.currentTarget.value}`);
+            console.log(e);
+        })
+
+
+        
+        /*
+        $('#input1').keyup(function (e) {
+            console.log("input keyup");
+            console.log(e);
+        })
+        */
+
+        
+        /*
+        $('#input1').keypress(function (e) {
+            console.log("input keypress");
+            console.log(e);
+            console.log(e.currentTarget.value); //반영이 된것을 확인할 수 있다.
+             $('#alert2').text(`keypress:  ${e.currentTarget.value}`);
+        })
+        
+        */
+
+        
+        
+
+
+    </script>
+</body>
+</html>
