@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <style>
+      table {
+        text-align: center;
+      }
+
+      #form {
+        height: 100%;
+      }
+
+      button {
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(205, 255, 190);
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid grey;
+        height: 30px;
+        margin-left: 10px;
+        font-size: 15px;
+      }
+
+      #form {
+        position: relative;
+      }
+
+      .input {
+        display: flex;
+        align-items: center;
+      }
+      label {
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      td {
+        cursor: pointer;
+      }
+    </style>
+    <title>Schedule</title>
+  </head>
+  <body>
+    <div id="containter">
+      <div id="form">
+        <form action="">
+          <div class="input">
+            <label for="date">날짜</label>
+            <input type="text" id="date" />
+          </div>
+          <div class="input">
+            <label for="content">내용</label>
+            <input type="text" id="content" />
+          </div>
+          <button type="button" onclick="onWrite()">작성</button>
+        </form>
+      </div>
+      <table cellpadding="13">
+        <tr>
+          <td colspan="7">2202년 7월</td>
+        </tr>
+        <tr>
+          <td style="color: red">日</td>
+          <td>月</td>
+          <td>火</td>
+          <td>水</td>
+          <td>木</td>
+          <td>金</td>
+          <td style="color: blue">土</td>
+        </tr>
+        <tr>
+          <td colspan="5"></td>
+          <td><p>1</p></td>
+          <td><p style="color: blue">2</p></td>
+        </tr>
+        <tr>
+          <td><p style="color: red">3</p></td>
+          <td><p>4</p></td>
+          <td><p>5</p></td>
+          <td><p>6</p></td>
+          <td><p>7</p></td>
+          <td><p>8</p></td>
+          <td><p style="color: blue">9</p></td>
+        </tr>
+        <tr>
+          <td><p style="color: red">10</p></td>
+          <td><p>11</p></td>
+          <td><p>12</p></td>
+          <td><p>13</p></td>
+          <td><p>14</p></td>
+          <td><p>15</p></td>
+          <td><p style="color: blue">16</p></td>
+        </tr>
+        <tr>
+          <td><p style="color: red">17</p></td>
+          <td><p>18</p></td>
+          <td><p>19</p></td>
+          <td><p>20</p></td>
+          <td><p>21</p></td>
+          <td><p>22</p></td>
+          <td><p style="color: blue">23</p></td>
+        </tr>
+        <tr>
+          <td><p style="color: red">24</p></td>
+          <td><p>25</p></td>
+          <td><p>26</p></td>
+          <td><p>27</p></td>
+          <td><p>28</p></td>
+          <td><p>29</p></td>
+          <td><p style="color: blue">30</p></td>
+        </tr>
+        <tr>
+          <td><p style="color: red">31</p></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      let curtd;
+      $('td').click(function () {
+        curtd = this;
+        let date = curtd.querySelector('p').innerText;
+        $('#date').val(date);
+      });
+
+      const onWrite = function () {
+        let div = curtd.querySelector('div');
+        console.log(div);
+        if (div) {
+          let date = curtd.querySelector('p').innerText;
+          div.innerText = $('#content').val();
+        } else {
+          let newdiv = document.createElement('div');
+          let newContent = $('#content').val();
+          newdiv.innerHTML = newContent;
+          curtd.appendChild(newdiv);
+        }
+      };
+    </script>
+  </body>
+</html>
