@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,12 +15,16 @@
         *{
             font-family: 'Noto Sans KR', sans-serif;
         }
+        body{
+            overflow-x: hidden;
+        }
 
         div{
             padding: 0 !important;
             margin-bottom: 0 !important;
         }
 
+        /* ****Alert**** */
         #alert{
             width: 100vw;
         }
@@ -57,6 +62,9 @@
             right: 20px
         }
 
+
+
+        /* ****Main nav**** */
         #main_nav{
             display: flex;
             justify-content: center;
@@ -94,6 +102,8 @@
 
         }
 
+        
+        /*Sub nav**** */
         .sub_nav{
             border-top: 1px solid grey;
             border-bottom:  1px solid grey;
@@ -121,31 +131,24 @@
             color: #35C5F0;
         }
 
-        #carouselExampleControls{
-            text-align: center;
-        }
 
-        #carousel{
-            width: 800px !important;
-        }
 
-        #carousel img{
-            width: 800px !important;
-        }
-
-        #main_img{
+        /* ****Carousle**** */ 
+        .carousel{
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-
+            
         }
 
-        #main_img img{
-            width: 800px !important;
-            border-radius: 10px;
-            max-width: 100%;
+        .carousel-inner{
+            width: 60vw !important;
+            
         }
 
+
+
+        /* ****Category Btn**** */
         .category_btns {
             margin-top: 30px !important;
             display: flex;
@@ -177,49 +180,142 @@
 
         }
 
+        .category_btn_icon:hover{
+            background-color: #d5d5d5;;
+        }
+
         .category_btns .col-xxl-8{
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .contentContainer {
-            justify-content: center;
-            margin-top: 40px !important;
-        }
 
-        .contentContainer h1{
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
 
-        .contentContainer img{
-            width: 200px;
-            height: auto;
-        }
-
-        .contentContainer a{
-            color: black;
-            font-size: 12px;
-        }
-        .contentContainer strong{
-            color: #35C5F0;
-        }
-
-        .contentContainer_Contents{
+        /* ****Content **** */
+        .contentContainer{
             display: flex;
-            justify-content: space-around
-        }
-        .contentContainer_Contents div{
-            width: 210px;
-            margin: 0 10px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+
         }
 
+        .contents{
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .contents h1{
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .contents img{
+             /*width: 200px;*/
+             width: 100%;
+        }
+
+        .contents > div{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .content{
+            display: inline-block;
+            flex-basis: 23%;
+        }
+
+
+        .content a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 13px;
+        }
+
+
+        .content p{
+            /*width: 220px;*/
+            margin-top: 5px;
+            color: black;
+        }
+
+        .content strong{
+            color:#35C5F0;
+
+        }
+
+
+
+        @media screen and (max-width:790px) {
+            .content {
+                flex-basis: 50%;
+            }
+            .contentContainer img{
+            width: 90%;
+            height: auto;
+            }
+
+            .contentContainer{
+                margin-top: 70px;
+            }
+        }
+
+
+
+        /*  ****footter**** */
+        footer{
+            margin-top: 30px;
+            background-color: rgb(241, 241, 241);
+            padding: 40px 60px;
+            
+        }
+
+        footer p{
+            margin-bottom: 0;
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: rgb(119, 119, 119);
+        }
+
+        footer button{
+            border: none;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        footer a{
+            color: rgb(119, 119, 119);
+            margin-right: 3px;
+        }
+
+        footer strong{
+            color: black;
+
+        }
+
+        .swal-title{
+            margin-bottom: 20px !important;
+        }
+
+        .swal-button{
+            
+            padding: 7px 27px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        
+        
 
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./오늘의집favicon.ico" type="image/x-icon">
+    <title>오늘의 집</title>
 </head>
 <body>
         <div class="alert alert-dismissible fade show row d-none d-md-flex" role="alert" id="alert">
@@ -306,37 +402,24 @@
             </div>
           </div>
 
-          <div id="main_img">
-            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/166787582991986473.png?w=1280&h=850&c=c" class="d-block w-100" alt="...">
-          </div>
 
-          <!--
-                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carousel">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/166787582991986473.png?w=1280&h=850&c=c" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166419475574764459.jpg?w=1920&h=1280&c=c" class="d-block w-100" alt="...">
+                <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166614593234177629.jpg?w=1920&h=1280&c=c" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" class="d-block w-100" alt="...">
+                <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/165900630596515644.jpg?w=1920&h=1280&c=c" class="d-block w-100" alt="...">
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
 
-          -->
 
           <div class="category_btns row">
-            <div class="col-xxl-8">
+            <div class="col-xxl-8 col-lg-10">
                 <button class="category_btn">
                     <div class="category_btn_icon">
                         <i class="bi bi-cart"></i>
@@ -407,136 +490,111 @@
             </div>
           </div>
           
-          <div class="contentContainer row">
-            <div class="col-xxl-6 ">
+
+          <div class="contentContainer">
+            <div class="contents">
                 <h1>🧐 요즘 #부부 #가족 홈스타일링</h1>
-                <div class="contentContainer_Contents">
-                    <div>
+               <div>
+                    <div class="content">
                         <a href="">
                             <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
                             <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166382155516683564.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>인테리어 디자이너</strong>톤온톤 스타일링이 돋보이는 22평</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/165900630596515644.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>확장 공간에 평상 만들기!</strong>가족들의 로망을 실현한 집</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164569871799202164.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>화이트우드에</strong>포인트 주기 좋은 소가구&소품</p>
                         </a>
                     </div>
-                </div>
-            </div>
-          </div>
-          <div class="contentContainer row">
-            <div class="col-xxl-6">
-                <h1>🧐 요즘 #부부 #가족 홈스타일링</h1>
-                <div class="contentContainer_Contents">
-                    <div>
-                        <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+               </div>             
           </div>
 
-          <div class="contentContainer row">
-            <div class="col-xxl-6">
+               
+          </div>
+          <div class="contentContainer">
+            <div class="contents">
                 <h1>🧐 요즘 #부부 #가족 홈스타일링</h1>
-                <div class="contentContainer_Contents">
-                    <div>
+               <div>
+                    <div class="content">
                         <a href="">
                             <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
                             <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166382155516683564.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>인테리어 디자이너</strong>톤온톤 스타일링이 돋보이는 22평</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/165900630596515644.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>확장 공간에 평상 만들기!</strong>가족들의 로망을 실현한 집</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164569871799202164.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>화이트우드에</strong>포인트 주기 좋은 소가구&소품</p>
                         </a>
                     </div>
-                </div>
-            </div>
+               </div>             
           </div>
 
-          <div class="contentContainer row">
-            <div class="col-xxl-6">
+               
+          </div>
+          <div class="contentContainer">
+            <div class="contents">
                 <h1>🧐 요즘 #부부 #가족 홈스타일링</h1>
-                <div class="contentContainer_Contents">
-                    <div>
+               <div>
+                    <div class="content">
                         <a href="">
                             <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
                             <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166382155516683564.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>인테리어 디자이너</strong>톤온톤 스타일링이 돋보이는 22평</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/165900630596515644.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>확장 공간에 평상 만들기!</strong>가족들의 로망을 실현한 집</p>
                         </a>
                     </div>
-                    <div>
+                    <div class="content">
                         <a href="">
-                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/166652777091307983.JPG?w=1920&h=1280&c=c" alt="">
-                            <p><strong>독특한 엔틱&컬러무드</strong>색다른 느낌의 30평대</p>
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/164569871799202164.jpg?w=1440&h=960&c=c" alt="">
+                            <p><strong>화이트우드에</strong>포인트 주기 좋은 소가구&소품</p>
                         </a>
                     </div>
-                </div>
-            </div>
+               </div>             
           </div>
 
+               
+          </div>
+
+          
 
           <footer>
-            <button >고객센터</button>
+            <button onclick="goCusCenter()">고객센터</button>
             <h2>1670-0876</h2>
             <p>09:00~18:00 (주말, 공휴일은 오늘의집 직접배송 및 이사/시공/수리 문의에 한해 전화 상담 가능)</p>
             <p>
@@ -557,6 +615,10 @@
             $('.sub_nav_btn').mouseleave(function(){
                $(this).removeClass('btn_active');
             })
+
+            const goCusCenter = function(){
+                swal("고객센터는 전화만 가능합니다", "1670-0876입니다");
+            }
         </script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
