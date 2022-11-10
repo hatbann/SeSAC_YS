@@ -1,7 +1,7 @@
 const ticketingBtn = $('#ticketing');
 const select = $('#selectmovie');
 
-let seats = $('td[class!=transparent]'); //모든 좌석에 대한 정보
+let seats = $('td[class!=transparent]'); //모든 좌석에 대한 정보, transparent인건 제외
 
 settingPage();
 
