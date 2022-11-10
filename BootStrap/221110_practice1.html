@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ticket.css">
+    <link rel="shortcut icon" href="./assets/moviefavicon.ico" type="image/x-icon">
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+    <title>Get your Ticket</title>
+</head>
+<body>
+    <div class="container">
+        <div id="sample" class="sampleImg grey"></div>
+        <img src="" alt="" id="movieImg" class="transparentImg">
+        <div>
+                <div id="select" class="grey">
+                    <span>영화를 선택하세요</span>
+                    <select name="" id="selectmovie">
+                        <option value="default">------------------------------</option>
+                        <option value="0">빅히어로 11:00~13:00</option>
+                        <option value="1">인사이드아웃 14:00~16:30</option>
+                        <option value="2">업 17:00~19:00</option>
+                    </select>
+                </div>
+                <div class="selectSeat">
+                    <div class="selectSeatInfo">
+                        <div>
+                            <p>Available</p>
+                            <div class="sample block green"></div>
+                        </div>
+                        <div>
+                            <p>Selected</p>
+                            <div class="sample block red"></div>
+                        </div>
+                        <div>
+                            <p>Occupied</p>
+                            <div class="sample block grey"></div>
+                        </div>
+                    </div>
+                    <div id="screen">Screen</div>
+                    <table cellspacing="5">
+                        <tr>
+                            <td class="green" data-seatNum="0"></td>
+                            <td class="green" data-seatNum="1"></td>
+                            <td class="green"  data-seatNum="2"></td>
+                            <td class="green"  data-seatNum="3"></td>
+                            <td class="green"  data-seatNum="4"></td>
+                            <td class="green"  data-seatNum="5"></td>
+                            <td class="green"  data-seatNum="6"></td>
+                            <td class="green"  data-seatNum="7"></td>
+                            <td class="green"  data-seatNum="8"></td>
+                        </tr>
+                        <tr>
+                            <td class="green"  data-seatNum="9"></td>
+                            <td class="green"  data-seatNum="10"></td>
+                            <td class="green"  data-seatNum="11"></td>
+                            <td class="green"  data-seatNum="12"></td>
+                            <td class="green"  data-seatNum="13"></td>
+                            <td class="green"  data-seatNum="14"></td>
+                            <td class="green"  data-seatNum="15"></td>
+                            <td class="green"  data-seatNum="16"></td>
+                            <td class="green"  data-seatNum="17"></td>
+                        </tr>
+                        <tr>
+                            <td class="green"  data-seatNum="18"></td>
+                            <td class="green"  data-seatNum="19"></td>
+                            <td class="green"  data-seatNum="20"></td>
+                            <td class="green"  data-seatNum="21"></td>
+                            <td class="green"  data-seatNum="22"></td>
+                            <td class="green"  data-seatNum="23"></td>
+                            <td class="green"  data-seatNum="24"></td>
+                            <td class="green"  data-seatNum="25"></td>
+                            <td class="green"  data-seatNum="26"></td>
+                        </tr>
+                        <tr>
+                            <td class="transparent"></td>
+                            <td class="green"  data-seatNum="27"></td>
+                            <td  class="green"  data-seatNum="28"></td>
+                            <td class="green"  data-seatNum="29"></td>
+                            <td class="green"  data-seatNum="30"></td>
+                            <td class="green"  data-seatNum="31"></td>
+                            <td class="green"  data-seatNum="32"></td>
+                            <td class="green"  data-seatNum="33"></td>
+                            <td class="transparent"></td>
+                        </tr>
+                    </table>
+                    <button type="button" id="ticketing" class="notSelected" disabled>예매</button>
+                </div>
+        </div>
+    </div>
+    <script src="./221110_practice1.js"></script>
+</body>
+</html>
