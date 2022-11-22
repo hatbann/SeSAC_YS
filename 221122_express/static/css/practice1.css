@@ -2,3 +2,7 @@ img{
     width: 200px;
     border-radius: 50%;
 }
+
+p{
+    font-weight: 600;
+}

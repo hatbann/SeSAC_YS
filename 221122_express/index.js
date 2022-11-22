@@ -39,13 +39,27 @@ app.get('/form', (req,res)=>{
 })
 
 app.get('/getForm', (req,res)=>{
-    console.log( req.query); //{ id: 'hatban', pw: '123456' }
-    res.send("get요청 성공");
+    console.log(req.query); //{ id: 'hatban', pw: '123456' }
+    //res.send("get요청 성공");
+    res.render("getForm", {
+        id: req.query.id,
+        gender: req.query.gender,
+        interest: req.query.interest
+    })
 })
 
 app.post('/postForm', (req,res)=>{
     console.log(req.body); //{ id: 'hatban', pw: '123456' }
-    res.send("post요청 성공");
+    //res.send("post요청 성공");
+    res.render("postForm", {
+        /*
+        id: req.body.id,
+        gender: req.body.gender,
+        interest: req.body.interest,
+        birthMonth : req.body.birthMonth,
+        content : req.body.content*/
+        data: req.body
+    })
 })
 
 
