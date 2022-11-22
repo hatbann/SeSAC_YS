@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ejs 파일로 만든 html</h1>
+    <img src="/public/images/동글이.jpg" alt="">
+    
+
+    <% for(let i = 0; i<5; i++) { %>
+       <div>안녕<%=i+1%></div>        
+    <% } %>
+
+
+    <div style="color:red;"><%="<span style='color:blue'>안녕</span>"%>하세요</div>
+    <div style="color:red;"><%-"<span style='color:blue'>안녕</span>"%>하세요</div>
+</body>
+</html>
