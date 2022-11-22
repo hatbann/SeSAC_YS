@@ -20,8 +20,13 @@ app.get('/test', (req,res)=>{
 })
 
 /* localhost:8080/ejs */
+ //view engine으로 설정해서 확장자 안써도됨, 이미 views 폴더임
+ //두번째 인자를 만약 넘기면 객체 형태로 넘기고, 원하는 데이터를 넘겨준다
 app.get('/ejs', (req,res)=>{
-   res.render("index") //view engine으로 설정해서 확장자 안써도됨, 이미 views 폴더임
+   res.render("index", {
+        title:"index 페이지 입니다.",
+        data: ["a", "b", "c"],
+   })
 })
 
 app.listen(port, ()=>{
