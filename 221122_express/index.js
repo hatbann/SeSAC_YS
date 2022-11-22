@@ -7,6 +7,11 @@ const port = 8080; //1023위의 숫자로, 보통 8080 8000 3000 많이함
 app.use("/public", express.static("static"));
 //static이라는 실제 존재하는 폴더를 public이라는 경로로 접근할 수 있도록 함
 
+
+//form전송을 위한 type설정
+app.use(express.urlencoded({extended:true})); // x-www-unlencoded 데이터 해성
+app.use(express.json()); //json형태로
+
 app.set('view engine', "ejs"); //html 이 아닌 ejs를 view engine으로 쓰겠다
 
 
@@ -28,6 +33,23 @@ app.get('/ejs', (req,res)=>{
         data: ["a", "b", "c"],
    })
 })
+
+app.get('/form', (req,res)=>{
+    res.render("form"); //절대경로만 입력하기
+})
+
+app.get('/getForm', (req,res)=>{
+    console.log( req.query); //{ id: 'hatban', pw: '123456' }
+    res.send("get요청 성공");
+})
+
+app.post('/postForm', (req,res)=>{
+    console.log(req.body); //{ id: 'hatban', pw: '123456' }
+    res.send("post요청 성공");
+})
+
+
+
 
 app.listen(port, ()=>{
     console.log("Server Open : ", port);
