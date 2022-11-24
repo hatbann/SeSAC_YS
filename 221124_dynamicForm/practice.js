@@ -14,6 +14,7 @@ app.get('/', (req,res)=>{
     res.render('practice');
 })
 
+
 app.post('/form', (req,res)=>{
     console.log(req.body);
     res.send(req.body);
