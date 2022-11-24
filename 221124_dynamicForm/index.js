@@ -16,7 +16,12 @@ app.get('/', (req,res)=>{
 
 app.get('/form', (req,res)=>{
     console.log(req.query);
-    res.send({msg: `이름은 ${req.query.name},  나이는 ${req.query.age}`,});
+    res.send({msg: `get : 이름은 ${req.query.name},  나이는 ${req.query.age}`,});
+})
+
+app.post('/form', (req,res)=>{
+    console.log(req.body);
+    res.send({msg: `post : 이름은 ${req.body.name},  나이는 ${req.body.age}`,});
 })
 
 app.listen(port,function(){

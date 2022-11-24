@@ -9,13 +9,27 @@
         function sendGet() {
             let form = document.getElementById("form_info");
             //form.name.value로 가져올 수 있다
-
-
             //axios get을 이용한 통신
             axios({
                 method: "get",
                 url : "/form",
                 params : {
+                    name : form.name.value,
+                    age : form.age.value,
+                },
+            }).then((res)=>{
+                console.log(res.data.msg);
+            });
+        }
+
+        function sendPost() {
+            let form = document.getElementById("form_info");
+            //form.name.value로 가져올 수 있다
+            //axios post을 이용한 통신
+            axios({
+                method: "post",
+                url : "/form",
+                data : {
                     name : form.name.value,
                     age : form.age.value,
                 },
