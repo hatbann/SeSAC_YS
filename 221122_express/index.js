@@ -63,6 +63,11 @@ app.post('/postForm', (req,res)=>{
 })
 
 
+app.get('/formAxios', function(req,res){
+    console.log(req.query);
+    res.send("이름은 : "+ req.query.name);
+})
+
 
 
 app.listen(port, ()=>{

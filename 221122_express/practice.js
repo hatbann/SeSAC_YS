@@ -16,7 +16,12 @@ app.get("/img",(req,res)=>{
 })
 
 app.get("/form",(req,res)=>{
-    res.render("formPractice");
+    res.render('formPractice');
+})
+
+app.get("/formPractice",(req,res)=>{
+    console.log(req.query);
+    res.send({msg: `이름은 ${req.query.name},  생년월일은 ${req.query.year}/${req.query.month}/${req.query.day}`,})
 })
 
 app.get("/getPractice",(req,res)=>{
