@@ -27,6 +27,19 @@ const upload = multer({
         })
     })
 
+const dynamicUpload = multer({
+    storage: multer.diskStorage({
+        destination(req,file,done){
+            done(null, 'uploads/');
+        },
+        filename(req,file,done){
+            const ext = path.extname(file.originalname);
+            const filename = Date.now() + ext;
+            done(null, filename);
+        }
+    })
+})
+
 app.get('/', (req,res)=>{
     res.render('form')
 })
@@ -40,6 +53,15 @@ app.post('/join', upload.single('userprofile'),(req,res)=>{
     });
 })
 
+app.get('/dynamicForm', (req,res)=>{
+    res.render('dynamicForm');
+})
+
+
+app.post('/dynamicForm' , dynamicUpload.single('dynamicfile'), (req,res)=>{
+    res.send({path : req.file.path});
+    
+})
 
 
 app.listen(port,function(){
