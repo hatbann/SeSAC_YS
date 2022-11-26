@@ -40,17 +40,13 @@ const dynamicUpload = multer({
     })
 })
 
-app.get('/', (req,res)=>{
+app.get('/join', (req,res)=>{
     res.render('form')
 })
 
 
-app.post('/join', upload.single('userprofile'),(req,res)=>{
-    console.log(req.file);
-    const path = req.file.path;
-    res.render('profile',{
-        filepath : path
-    });
+app.post('/join', dynamicUpload.single('dynamicfile'),(req,res)=>{
+    res.send({path : req.file.path});
 })
 
 app.get('/dynamicForm', (req,res)=>{

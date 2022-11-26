@@ -7,24 +7,29 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function onDynamicUpload(){
-            let form  = document.getElementById('dynamic_form');
-
+            let form = document.getElementById('dynamicForm');
+            const file = document.getElementById('fileinput');
+            let formdata = new FormData();
+            console.log(file.files[0]);
+            formdata.append("dynamicfile", file.files[0]); //single() 안의 파라미터 값이 append의 첫번쩨ㅐ 매개변수로 이름같게!
             axios({
-                method: "post",
-                url : "/dynamicUpload",
-                data : {
-                    file : form.dynamicfile.value
-                }   
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                 },
+                method:"post",
+                url:"/join",
+                data: formdata,
             }).then((res)=>{
-                const dynamicImg = document.getElementById('dynamicImg');
-                dynamicImg.setAttribute("src", res.data.path);
+                return res.data;
+            }).then((d)=>{
+                const dynamicImg = document.getElementById('dynamicImg').src = d.path;
             })
         }
     </script>
     <title>Form</title>
 </head>
 <body>
-    <form action="/join" method="post" enctype="multipart/form-data" id="dynamic_form">
+    <form action="/join" method="post" enctype="multipart/form-data" id="dynamicForm">
         <fieldset>
             <legend>개인 정보</legend>
             <div>
@@ -44,10 +49,11 @@
                 <input type="number" name="age" id="age">
             </div>
         </fieldset>
-        <input type="file" name="userprofile" id="userprofile">
+        <input type="file" name="fileinput" id="fileinput">
         <button>리셋</button>
-        <button>회원가입</button>
+        <button type="button" onclick="onDynamicUpload()">회원가입</button>
     </form>
+    <img id="dynamicImg" src="" >
 
     
 </body>
