@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>파일 하나</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" id=""> <!--multer 미들웨어에서 처리가능-->
+        <input type="file" name="userfile" >
+        <input type="text" name="name2" id=""> <!--multer 미들웨어에서 처리불가능-->
+        <button>업로드</button>
+    </form>
+
+    <h3>파일여러개</h3>
+    <form action="/upload-array" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile2" multiple>
+        <button>업로드2</button>
+    </form>
+
+    <h3>파일 한개씩 여러번</h3>
+    <form action="/upload-fields" method="post" enctype="multipart/form-data">
+        <input type="file" name="file3" >
+        <input type="file" name="file4" >
+        <input type="file" name="file5" >
+        <button>업로드3</button>
+    </form>
+
+</body>
+</html>
