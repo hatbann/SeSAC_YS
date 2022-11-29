@@ -1,0 +1,16 @@
+
+#table{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#table div{
+    text-align: center;
+    margin: 10px;
+    border-bottom: 1px solid salmon;
+    padding: 10px;
+}
