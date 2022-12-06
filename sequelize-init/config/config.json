@@ -1,0 +1,16 @@
+{
+    "development" : {
+        "host": "localhost",
+        "database" : "test1",
+        "username" :"hyebin",
+        "password" : "1234",
+        "dialect" : "mysql" 
+    },
+    "production" : {
+        "host": "localhost",
+        "database" : "test1",
+        "username" :"hyebin",
+        "password" : "1234",
+        "dialect" : "mysql" 
+    }
+}
