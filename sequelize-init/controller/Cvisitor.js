@@ -55,6 +55,12 @@ exports.get_visitor_by_id = async(req, res) => {
     // req.query.id 에 해당하는 데이터를 조회
     // 서버 응답 > 조회한 데이터
     let result = await Visitor.findOne({
+        /*attributes:[
+            "id","name", 
+            "comment"
+        ],
+        order:[{"id", "desc"}],
+        limit: 1*/
              where : {
                 id : req.query.id
             },
