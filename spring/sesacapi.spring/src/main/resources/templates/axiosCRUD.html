@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function Join() {
+        var form = document.getElementById('joinForm');
+        console.log(form.userName.value);
+        axios.post(`/axios/vo/join`, {id: form.userID.value, pw: form.userPw.value, username:form.userName.value
+         })
+        .then((res)=>{
+            console.log( res );
+            console.log( res.data  );
+        });
+    }
+
+     function Login() {
+        var form = document.getElementById('loginForm');
+        console.log(form.loginUserID.value);
+        axios.post(`/axios/vo/login`, {id: form.loginUserID.value, pw: form.loginUserPw.value
+         })
+        .then((res)=>{
+            console.log( res );
+            console.log( res.data  );
+        });
+    }
+
+    function Edit() {
+        var form = document.getElementById('editForm');
+        axios.post(`/axios/dto/edit`, {username: form.editUserName.value, pw: form.editUserPw.value, age: form.editUserAge.value
+         })
+        .then((res)=>{
+            console.log( res );
+            console.log( res.data  );
+        });
+    }
+
+        function Delete() {
+        var form = document.getElementById('deleteUserForm');
+        axios.post(`/axios/dto/delete`, {username: form.deleteUserId.value, pw: form.deleteUserPw.value
+         })
+        .then((res)=>{
+            console.log( res );
+            console.log( res.data  );
+        });
+    }
+
+</script>
+<div>
+  <h1>회원가입</h1>
+  <form id="joinForm">
+    <fieldset>
+      <div>
+        <label for="userID">아이디</label>
+        <input type="text" name="userID" id="userID">
+      </div>
+      <div>
+        <label for="userPw">비밀번호</label>
+        <input type="password" name="userPw" id="userPw" >
+      </div>
+      <div>
+        <label for="userName">이름</label>
+        <input type="text" name="userName" id="userName">
+      </div>
+      <button type="button" onclick="Join();">회원가입</button>
+    </fieldset>
+  </form>
+</div>
+
+<div>
+  <h1>로그인</h1>
+  <form id="loginForm">
+    <fieldset>
+      <div>
+        <label for="loginUserID">아이디</label>
+        <input type="text" name="loginUserID" id="loginUserID">
+      </div>
+      <div>
+        <label for="loginUserPw">비밀번호</label>
+        <input type="password" name="loginUserPw" id="loginUserPw" >
+      </div>
+      <button type="button" onclick="Login();">로그인</button>
+    </fieldset>
+  </form>
+</div>
+
+<div>
+  <h1>회원정보 수정</h1>
+  <form id="editForm">
+    <fieldset>
+      <div>
+        <label for="editUserName">이름</label>
+        <input type="text" name="editUserName" id="editUserName">
+      </div>
+      <div>
+        <label for="editUserPw">비밀번호</label>
+        <input type="password" name="editUserPw" id="editUserPw" >
+      </div>
+      <div>
+        <label for="editUserAge">나이</label>
+        <input type="text" name="editUserAge" id="editUserAge" >
+      </div>
+      <button type="button" onclick="Edit();">수정</button>
+    </fieldset>
+  </form>
+</div>
+
+<div>
+  <h1>회원탈퇴</h1>
+  <form id="deleteUserForm">
+    <fieldset>
+      <div>
+        <label for="deleteUserId">아이디</label>
+        <input type="text" name="deleteUserId" id="deleteUserId">
+      </div>
+      <div>
+        <label for="deleteUserPw">비밀번호</label>
+        <input type="password" name="deleteUserPw" id="deleteUserPw" >
+      </div>
+      <button type="button" onclick="Delete();">탈퇴</button>
+    </fieldset>
+  </form>
+</div>
+</body>
+</html>

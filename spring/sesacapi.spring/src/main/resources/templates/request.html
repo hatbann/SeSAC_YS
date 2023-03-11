@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display:flex">
+    <form action="/get/response1" method="get" style="margin-right : 20px;">
+        <h3>Get 전송 (required = true)</h3>
+        이름 : <input type="text" name="name">
+        <br>
+        <button type="submit">GET 전송</button>
+    </form>
+    <form action="/get/response2" method="get" style="margin-right : 20px;">
+        <h3>Get 전송 (required = false)</h3>
+        <br>
+        <button type="submit">GET 전송</button>
+    </form>
+    <div style="margin-right:20px;">
+        <h3>Get 전송 - ~/{value}</h3>
+        <a href="/get/response3/이름/나이">
+            get/response3/이름/나이
+        </a>
+    </div>
+    <div>
+        <h3>Get 전송 - ~/{value}</h3>
+        <a href="/get/response4/이름/나이">
+            get/response4/이름/나이
+        </a>
+    </div>
+    <hr>
+    <form action="/post/response1" method="post" style="margin-right: 20px;">
+        <h3>Post 전송 ( required = true )</h3>
+        <input type="text" name="name">
+        <br>
+        <button type="submit">Post 전송</button>
+    </form>
+    <form action="/post/response2" method="post" style="margin-right: 20px;">
+        <h3>Post 전송 ( required = false )</h3>
+        <input type="text" name="name">
+        <br>
+        <button type="submit">Post 전송</button>
+    </form>
+    <form action="/post/response3" method="post" style="margin-right: 20px;">
+        <h3>Post 전송 ( ResponseBody )</h3>
+        <input type="text" name="name">
+        <br>
+        <button type="submit">Post 전송</button>
+    </form>
+</div>
+<br>
+
+<div>
+    <form method="post" action="/post/practice3">
+    <fieldset>
+        <div>
+            <label for="name">이름</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <span>성별</span>
+            <input type="radio" name="gender" id="male" value="남자">
+            <label for="male">남자</label>
+            <input type="radio" name="gender" id="female" value="여자">
+            <label for="female">여자</label>
+        </div>
+        <div>
+            <span>생년월일</span>
+            <select name="year" id="year">
+                <option value="2000">2000</option>
+                <option value="2000">2001</option>
+                <option value="2000">2002</option>
+            </select>
+            년
+            <select name="month" id="month">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            월
+            <select name="day" id="day">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            일
+        </div>
+        <div>
+            <span>관심사</span>
+            <input type="checkbox" value="여행" id="travel" name="interest">
+            <label for="travel">여행</label>
+            <input type="checkbox" value="패션" id="fashion" name="interest">
+            <label for="fashion">패션</label>
+            <input type="checkbox" value="음식" id="food" name="interest" >
+            <label for="food">음식</label>
+        </div>
+        <button type="submit">Post 전송</button>
+    </fieldset>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function dtoResponse1() {
+        var form = document.getElementById('form_dto1');
+        axios.get(`/axios/response1?name=${form.name.value}&age=${form.age.value}`)
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse1 : ', res.data );
+        });
+    }
+    function dtoResponse2() {
+        var form = document.getElementById('form_dto1');
+        axios.get(`/axios/response2?name=${form.name.value}&age=${form.age.value}`)
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse2 : ', res.data );
+        });
+    }
+    function dtoResponse3() {
+        var form = document.getElementById('form_dto2');
+        axios.post(`/axios/response3`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse3 : ', res.data );
+        });
+    }
+    function dtoResponse4() {
+        var form = document.getElementById('form_dto2');
+        axios.post(`/axios/response4`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse1 : ', res.data );
+        });
+    }
+    function dtoResponse5() {
+        var form = document.getElementById('form_dto2');
+        axios.post(`/axios/response5`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse5 : ', res.data );
+        });
+    }
+
+    function voResponse1() {
+        var form = document.getElementById('form_vo1');
+        axios.get(`/axios/vo/response1?name=${form.name.value}&age=${form.age.value}`)
+        .then((res)=>{
+            console.log( res );
+            console.log( 'dtoResponse1 : ', res.data );
+        });
+    }
+    function voResponse2() {
+        var form = document.getElementById('form_vo1');
+        axios.get(`/axios/vo/response2?name=${form.name.value}&age=${form.age.value}`)
+        .then((res)=>{
+            console.log( res );
+            console.log( 'voResponse2 : ', res.data );
+        });
+    }
+    function voResponse3() {
+        var form = document.getElementById('form_vo2');
+        axios.post(`/axios/vo/response3`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'voResponse3 : ', res.data );
+        });
+    }
+    function voResponse4() {
+        var form = document.getElementById('form_vo2');
+        axios.post(`/axios/vo/response4`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'voResponse4 : ', res.data );
+        });
+    }
+    function voResponse5() {
+        var form = document.getElementById('form_vo2');
+        axios.post(`/axios/vo/response5`, {name: form.name.value, age: form.age.value})
+        .then((res)=>{
+            console.log( res );
+            console.log( 'voResponse5 : ', res.data  );
+        });
+    }
+
+    function voResponse6() {
+        var form = document.getElementById('form_vo3');
+        let interestArr = [];
+        for(let i = 0; i<form.interest.length; i++){
+            if(form.interest[i].checked == true){
+                interestArr.push(form.interest[i].value);
+            }
+        }
+        console.log(interestArr);
+        axios.post(`/axios/vo/response6`, {name: form.name.value, gender: form.gender.value, year:form.year.value,
+           month : form.month.value, day : form.day.value, interest:interestArr
+         })
+        .then((res)=>{
+            console.log( res );
+            console.log( res.data  );
+        });
+    }
+
+
+</script>
+
+<br>
+<hr>
+<h2>DTO 이용하기 - axios</h2>
+<div style="display: flex">
+    <form action="/axios/response1" method="get" style="margin-right: 20px;" id="form_dto1">
+        이름 : <input type="text" name="name">
+        <br>
+        나이 : <input type="text" name="age">
+        <br>
+        <button type="button" onclick="dtoResponse1();">GET ( 일반 ) - axios</button>
+        <button type="button" onclick="dtoResponse2();">Get ( DTO ) - axios</button>
+    </form>
+    <form action="/axios/response3" method="post" style="margin-right: 20px;" id="form_dto2">
+        <h3>Post ( 일반 ) - axios</h3>
+        이름 : <input type="text" name="name">
+        <br>
+        나이 : <input type="text" name="age">
+        <br>
+        <button type="button" onclick="dtoResponse3();">Post ( 일반 ) - axios</button>
+        <button type="button" onclick="dtoResponse4();">Post ( DTO ) - axios ( RequestBody X )</button>
+        <button type="button" onclick="dtoResponse5();">Post ( DTO ) - axios ( RequestBody O )</button>
+    </form>
+</div>
+
+<br>
+<hr>
+<h2>VO 이용하기 - axios</h2>
+<div style="display: flex">
+    <form id="form_vo1" style="margin-right: 20px;">
+        <h3>Get ( 일반 ) - axios</h3>
+        이름 : <input type="text" name="name">
+        <br>
+        나이 : <input type="text" name="age">
+        <br>
+        <button type="button" onclick="voResponse1();">GET ( 일반 ) - axios</button>
+        <button type="button" onclick="voResponse2();">Get ( VO ) - axios</button>
+    </form>
+    <form id="form_vo2" style="margin-right: 20px;">
+        <h3>Post ( 일반 ) - axios</h3>
+        이름 : <input type="text" name="name">
+        <br>
+        나이 : <input type="text" name="age">
+        <br>
+        <button type="button" onclick="voResponse3();">Post ( 일반 ) - axios</button>
+        <button type="button" onclick="voResponse4();">Post ( VO ) - axios ( RequestBody X )</button>
+        <button type="button" onclick="voResponse5();">Post ( VO ) - axios ( RequestBody O )</button>
+    </form>
+</div>
+
+<br>
+<br>
+
+<div>
+    <h1>실습9</h1>
+    <form id="form_vo3">
+        <fieldset>
+            <div>
+                <label for="name">이름</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <span>성별</span>
+                <input type="radio" name="gender" id="male" value="남자">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" id="female" value="여자">
+                <label for="female">여자</label>
+            </div>
+            <div>
+                <span>생년월일</span>
+                <select name="year" id="year">
+                    <option value="2000">2000</option>
+                    <option value="2000">2001</option>
+                    <option value="2000">2002</option>
+                </select>
+                년
+                <select name="month" id="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                월
+                <select name="day" id="day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                일
+            </div>
+            <div>
+                <span>관심사</span>
+                <input type="checkbox" value="여행" id="travel" name="interest">
+                <label for="travel">여행</label>
+                <input type="checkbox" value="패션" id="fashion" name="interest">
+                <label for="fashion">패션</label>
+                <input type="checkbox" value="음식" id="food" name="interest" >
+                <label for="food">음식</label>
+            </div>
+            <button type="button" onclick="voResponse6();">전송</button>
+        </fieldset>
+    </form>
+</div>
+
+
+</body>
+</html>
