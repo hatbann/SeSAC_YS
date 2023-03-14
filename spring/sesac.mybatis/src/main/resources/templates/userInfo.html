@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>UserInfo</title>
+</head>
+<body>
+    <h3>아이디 : <span th:text="${userId}" id="userId"></span></h3>
+    <h3>닉네임 : <span th:text="${userNickname}" id="userNickname"> </span></h3>
+    <button onclick="edit()">닉네임 수정하기</button>
+
+    <form id="form_edit" method="post" action="/edit" style="display: none">
+        <input type="text" name="userId">
+        <input type="text" name="userNickname">
+    </form>
+    <script>
+
+
+        function edit(){
+                   const userId = document.getElementById('userId').innerText;
+                   const userNickname = document.getElementById('userNickname').innerText;
+                   let editForm = document.getElementById('form_edit');
+                   editForm.userId.value = userId;
+                   editForm.userNickname.value =userNickname;
+                   editForm.submit();
+        }
+
+    </script>
+</body>
+</html>
