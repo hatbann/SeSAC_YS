@@ -3,20 +3,25 @@ package sesacmybatis.sesac.mybatis.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sesacmybatis.sesac.mybatis.domain.User;
+import sesacmybatis.sesac.mybatis.domain.UserEntity;
 import sesacmybatis.sesac.mybatis.dto.UserDTO;
 import sesacmybatis.sesac.mybatis.mapper.MainMapper;
+import sesacmybatis.sesac.mybatis.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MainService {
 
     @Autowired
     private MainMapper mainMapper;
+    @Autowired
+    private UserRepository userRepository;
 
     public List<UserDTO> getUserList(){
-        List<User> result = mainMapper.retrieveAll();
+        List<UserEntity> result = userRepository.findAll();
         List<UserDTO> users = new ArrayList<UserDTO>();
 
         for(int i = 0; i<result.size(); i++){
@@ -30,6 +35,25 @@ public class MainService {
         }
         return  users;
     }
+
+
+    public ArrayList<UserDTO> getUserNickname(String userNickname){
+        Optional<UserEntity> user = userRepository.findByUserNickname(userNickname);
+        ArrayList<UserDTO> userList = new ArrayList<>();
+
+        if(user.isPresent()){
+            UserDTO dto = new UserDTO();
+            dto.setUserId(user.get().getUserId());
+            dto.setUserNickname(user.get().getUserNickname());
+            dto.setUserPw(user.get().getUserPw());
+            dto.setNo(0);
+
+            userList.add(dto);
+        }
+
+        return userList;
+    }
+
 
     public User Login(UserDTO userDTO){
         return mainMapper.findUser(userDTO);
@@ -45,5 +69,5 @@ public class MainService {
     public void Delete(String userId){
         mainMapper.delete(userId);
     }
-    public void addUser(User user) {mainMapper.insertUser(user);}
+    public void addUser(UserEntity user) {userRepository.save(user);}
 }

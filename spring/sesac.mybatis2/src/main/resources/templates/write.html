@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write</title>
+</head>
+<body>
+  <form id="write_form" method="post" action="/submit">
+    <div>
+      <label>작성자</label>
+      <input type="text" name="writer">
+    </div>
+    <div>
+      <label>내용</label>
+      <input type="text" name="content">
+    </div>
+    <button type="submit" onclick="finishWrite()">작성완료</button>
+  </form>
+  <script>
+      function finishWrite(){
+        let writeForm = document.getElementById("write_form");
+        let writer = writeForm.writer.value;
+        let content = writeForm.content.value;
+        writeForm.submit();
+      }
+
+  </script>
+
+</body>
+</html>

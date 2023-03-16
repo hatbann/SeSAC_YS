@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Board</title>
+</head>
+<body>
+    <h1>게시판</h1>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>작성자</th>
+            <th>내용</th>
+        </tr>
+        <tr th:each="content:${contents}">
+            <td th:text="${content.getNo()}"></td>
+            <td th:text="${content.getWriter()}"></td>
+            <td th:text="${content.getContent()}"></td>
+        </tr>
+    </table>
+    <button onclick="goWrite()">글 쓰기</button>
+
+    <form id="writeFrom" method="get" action="/write">
+
+    </form>
+    <script>
+        function goWrite(){
+            console.log(1);
+            let form = document.getElementById("writeFrom");
+            form.submit();
+        }
+    </script>
+</body>
+</html>

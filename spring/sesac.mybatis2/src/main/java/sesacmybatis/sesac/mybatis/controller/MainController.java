@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import sesacmybatis.sesac.mybatis.domain.User;
+import sesacmybatis.sesac.mybatis.domain.UserEntity;
 import sesacmybatis.sesac.mybatis.dto.UserDTO;
 import sesacmybatis.sesac.mybatis.service.MainService;
 
@@ -29,7 +30,7 @@ public class MainController {
     @PostMapping("/axios/dto/join")
     @ResponseBody
     public String axiosDTOAPIJoin(@RequestBody UserDTO UserDTO){
-        User user = new User();
+        UserEntity user = new UserEntity();
 
         user.setUserId(UserDTO.getUserId());
         user.setUserPw(UserDTO.getUserPw());
