@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editContent</title>
+</head>
+<body>
+    <form id="editForm" action="/editContent" method="post">
+        <input type="number" name="id" th:value="${content.getId()}" style="display:none">
+        <div>
+            <label>작성자</label>
+            <input type="text" name="writer" th:value="${content.getWriter()}">
+        </div>
+        <div>
+            <label>내용</label>
+            <input type="text" name="content" th:value="${content.getContent()}">
+        </div>
+        <button type="submit">수정 완료</button>
+    </form>
+<script>
+    function edit(){
+          let form = document.getElementById("editForm");
+          form.submit();
+    }
+</script>
+</body>
+</html>

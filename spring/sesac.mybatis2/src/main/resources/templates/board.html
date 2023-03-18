@@ -17,18 +17,44 @@
             <td th:text="${content.getNo()}"></td>
             <td th:text="${content.getWriter()}"></td>
             <td th:text="${content.getContent()}"></td>
+            <td>  <button th:text="수정" onclick="goEdit(this.value)" th:value="${content.getId()}"></button></td>
+            <td>
+                <button th:text="삭제" onclick="deleteWrite(this.value)" th:value="${content.getId()}"></button>
+            </td>
+
         </tr>
     </table>
     <button onclick="goWrite()">글 쓰기</button>
 
-    <form id="writeFrom" method="get" action="/write">
-
+    <form id="writeForm" method="get" action="/write">
+    </form>
+    <form id="editForm" method="post" action="/goEdit" style="display:none">
+        <input type="number" name="id">
+    </form>
+    <form id="deleteForm" method="post" action="/deleteContent" style="display:none">
+        <input type="number" name="id">
     </form>
     <script>
         function goWrite(){
-            console.log(1);
-            let form = document.getElementById("writeFrom");
+            let form = document.getElementById("writeForm");
             form.submit();
+        }
+
+        function goEdit(value){
+
+            let form = document.getElementById("editForm");
+            form.id.value = value;
+            form.submit();
+            console.log(value);
+        }
+
+        function deleteWrite(value){
+        let confirm = window.confirm("정말로 삭제하시겠습니까?")
+        if(confirm){
+                            let form = document.getElementById("deleteForm");
+                form.id.value = value;
+                form.submit();
+        }
         }
     </script>
 </body>

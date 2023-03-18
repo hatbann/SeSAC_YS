@@ -10,6 +10,7 @@ import sesacmybatis.sesac.mybatis.repository.BoardRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BoardService {
@@ -36,7 +37,30 @@ public class BoardService {
         return boardList;
     }
 
+    public BoardDTO getBoardById(int id) {
+        Optional<BoardEntity> board = boardRepository.findById(id);
+        BoardDTO boardDTO = new BoardDTO();
+        if ( board.isPresent() ){
+            boardDTO.setId(board.get().getId());
+            boardDTO.setContent(board.get().getContent());
+            boardDTO.setWriter(board.get().getWriter());
+        }
+        return boardDTO;
+    }
+
+    public void updateBoard(BoardDTO boardDTO) {
+        BoardEntity board = new BoardEntity();
+        board.setId(boardDTO.getId());
+        board.setContent(boardDTO.getContent());
+        board.setWriter(boardDTO.getWriter());
+
+        boardRepository.save(board);
+    }
+
     public void addContent(BoardEntity content){boardRepository.save(content);}
 
+    public void deleteBoard(int Id) {
+        boardRepository.deleteById(Id);
+    }
 
 }

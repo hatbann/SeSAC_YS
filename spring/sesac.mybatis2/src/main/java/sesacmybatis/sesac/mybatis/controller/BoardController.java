@@ -30,13 +30,38 @@ public class BoardController {
     }
 
     @PostMapping("/submit")
-    @ResponseBody
-    public BoardEntity submitContent(@RequestParam String writer, @RequestParam String content){
+    public String submitContent(@RequestParam String writer, @RequestParam String content){
         BoardEntity board = new BoardEntity();
         board.setContent(content);
         board.setWriter(writer);
         boardService.addContent(board);
 
-        return board;
+        return "redirect:/board";
+    }
+
+    @PostMapping("/goEdit")
+    public String editContent(@RequestParam int id, Model model){
+        BoardDTO boardDTO = boardService.getBoardById(id);
+        model.addAttribute("content", boardDTO);
+
+        return "editContent";
+    }
+
+    @PostMapping("/editContent")
+    public String edit(BoardDTO boardDTO, Model model){
+        System.out.println(boardDTO.getWriter());
+        System.out.println(boardDTO.getId());
+        System.out.println(boardDTO.getContent());
+        boardService.updateBoard(boardDTO);
+
+        return "redirect:/board";
+    }
+
+    @PostMapping("/deleteContent")
+    public String deleteContent(@RequestParam int id){
+        System.out.print(id);
+        boardService.deleteBoard(id);
+
+        return "redirect:/board";
     }
 }
